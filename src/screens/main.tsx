@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, Box, Center, VStack } from 'native-base'
+import { Text, Box, Center, VStack, useColorModeValue } from 'native-base'
 import ThemeToggle from '../components/theme-toggle'
 
 export default function MainScreen() {
@@ -11,7 +11,7 @@ export default function MainScreen() {
       flex={1}
     >
       <VStack space={5} alignItems="center">
-        <Box>
+        <Box p={10} bg={useColorModeValue('red.500', 'yellow.500')}>
           <Text>Hello</Text>
         </Box>
         <ThemeToggle />
@@ -19,3 +19,8 @@ export default function MainScreen() {
     </Center>
   )
 }
+
+//Notes
+// useColorMode hook -> gets value from the them-toggle component
+// bg -> background color.opacity
+// main component is calling the ThemeToggle component to change the theme color
